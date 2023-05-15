@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function CountryInfoShort() {
+export default function CountryInfoShort(props) {
     return (
         <div>
             {/* img goes here */}
-            <h2>Country name</h2>
+            <h2>{props.name}</h2>
             <ul>
-                <li>Population: </li>
-                <li>Region: </li>
-                <li>Capital: </li>
+                <li>Population: n/a</li>
+                <li>Region: {props.region}</li>
+                <li>Capital: {props.capital[0]}</li>
             </ul>
         </div>
     )

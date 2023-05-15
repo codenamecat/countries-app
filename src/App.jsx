@@ -8,33 +8,51 @@ import CountryInfoLong from './components/CountryInfoLong'
 
 function App() {
 
-  // React.useEffect(() => {
-  //   fetch('MIKÄ LINKKI TÄHÄN OIKEEN TULEE MISTÄ LÖYDÄN UUDEN APIN')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data)
-  //       // console.log(data[0].flags.png)
-  //       // console.log(data[0].name.common)
-  //       // console.log(data[0].population)
-  //       // console.log(data[0].region)
-  //       // console.log(data[0].capital[0])
-  //       // //for the individual view vv
-  //       // console.log(data[0].name.nativeName) //this is a problem i will deal with later (fifa?)
-  //       // console.log(data[0].subregion)
-  //       // console.log(data[0].tld[0])
-  //       // console.log(data[0].currencies) //same problem as above
-  //       // console.log(data[0].languages) //3rd of the same problem
-  //       // console.log(data[0].borders) //array, do stuff with that
-  //     })
-  // }, [])
+  const [countryData, setCountryData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('https://raw.githubusercontent.com/mledoze/countries/master/countries.json')
+      .then(res => res.json())
+      .then(data => {
+        setCountryData(data);
+        // console.log(data[9])
+        // console.log(data[9].flag)
+        // console.log(data[9].name.common)
+        // console.log(data[9].population) population data not available
+        // console.log(data[9].region)
+        // console.log(data[9].capital[0])
+        //for the individual view vv
+        // const nativeNameAbbr = Object.keys(data[9].name.native)[0];
+        // console.log(nativeNameAbbr) //this is a problem i will deal with later (fifa?)
+        // console.log(data[9].name.native[nativeNameAbbr].common)
+        // console.log(data[9].subregion)
+        // console.log(data[9].tld[0])
+        // const currencyAbbr = Object.keys(data[9].currencies)[0]
+        // console.log(data[9].currencies[currencyAbbr].name) //same problem as above
+        // const languageAbbr = Object.keys(data[9].languages)[0]
+        // console.log(data[9].languages[languageAbbr]) //3rd of the same problem
+        // console.log(data[9].borders) //array, do stuff with that
+      })
+  }, [])
+
+  const countryElements = countryData.map(country => {
+    return (
+      <CountryInfoShort
+        key={country.name.common}
+        name={country.name.common}
+        region={country.region}
+        capital={country.capital}
+      />
+    )
+  })
 
   return (
     <>
       <Navbar />
       <Search />
       <Filter />
-      <CountryInfoShort />
-      <CountryInfoLong />
+      {countryElements}
+      {/* <CountryInfoLong /> */}
     </>
   )
 }
