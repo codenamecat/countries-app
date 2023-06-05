@@ -1,15 +1,62 @@
 import React from 'react'
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route
+} from 'react-router-dom'
+
 import './App.css'
-import data from './data.json'
-import Navbar from './components/Navbar'
-import Search from './components/Search'
-import Filter from './components/Filter'
-import CountryInfoShort from './components/CountryInfoShort'
+import Layout from './components/Layout'
 import CountryInfoLong from './components/CountryInfoLong'
+import CountryList from './components/CountryList'
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path="/" element={<Layout />}>
+    <Route index element={<CountryList />} />
+    <Route path=":country" element={<CountryInfoLong />} />
+  </Route>
+))
 
 function App() {
+  return (
+    <RouterProvider router={router} />
+  )
 
-  const [countryData, setCountryData] = React.useState(data);
+}
+
+export default App
+
+// const [countryData, setCountryData] = React.useState(data);
+
+// const countryElements = countryData.map(country => {
+//   return (
+//     <CountryInfoShort
+//       key={country.name}
+//       name={country.name}
+//       flagImg={country.flags.svg}
+//       population={country.population}
+//       region={country.region}
+//       capital={country.capital}
+//     />
+//   )
+// })
+
+// return (
+//   <>
+//     <Navbar />
+//     <Search />
+//     <Filter />
+//     {countryElements}
+//     {/* <CountryInfoLong /> */}
+//   </>
+// )
+
+
+// things needed from the data: 
+// multiple countries view: flag, name, population, region, capital
+// individual view: flag, name, native name, population, region, sub region, capital, top level doman, currencies, languages, border countries
+
 
   // React.useEffect(() => {
   //   fetch('https://raw.githubusercontent.com/mledoze/countries/master/countries.json')
@@ -35,34 +82,3 @@ function App() {
   //       // console.log(data[9].borders) //array, do stuff with that
   //     })
   // }, [])
-
-  const countryElements = countryData.map(country => {
-    return (
-      <CountryInfoShort
-        key={country.name}
-        name={country.name}
-        flagImg={country.flags.svg}
-        population={country.population}
-        region={country.region}
-        capital={country.capital}
-      />
-    )
-  })
-
-  return (
-    <>
-      <Navbar />
-      <Search />
-      <Filter />
-      {countryElements}
-      {/* <CountryInfoLong /> */}
-    </>
-  )
-}
-
-export default App
-
-
-// things needed from the data: 
-// multiple countries view: flag, name, population, region, capital
-// individual view: flag, name, native name, population, region, sub region, capital, top level doman, currencies, languages, border countries
