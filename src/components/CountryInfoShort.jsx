@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom'
 export default function CountryInfoShort(props) {
     return (
         <div>
-            <Link to={props.name}>
+            <Link to={props.name} state={{countryCode: props.code}}>
                 <img src={props.flagImg} alt={`The flag of ${props.name}`} className="flag-img" />
                 <h2>{props.name}</h2>
                 <ul>
                     <li>Population: {props.population}</li>
                     <li>Region: {props.region}</li>
                     <li>Capital: {props.capital}</li>
+                    <li>temp item country code: {props.code}</li>
                 </ul>
             </Link>
         </div>

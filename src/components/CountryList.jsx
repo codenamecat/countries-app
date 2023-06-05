@@ -16,6 +16,7 @@ export default function CountryList() {
                 population={country.population}
                 region={country.region}
                 capital={country.capital}
+                code={country.alpha3Code}
             />
         )
     })
