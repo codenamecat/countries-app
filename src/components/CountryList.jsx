@@ -10,6 +10,8 @@ export default function CountryList() {
 
     const [regions, setRegions] = React.useState('all');
 
+    const [countrySearch, setCountrySearch] = React.useState('');
+
     function changeRegion(event) {
         const { value } = event.target;
         setRegions(value);
@@ -19,10 +21,25 @@ export default function CountryList() {
             return;
         }
 
+        setCountrySearch('');
+
         const filteredData = data.filter(country => {
             return country.region === value;
-         });
-         setCountryData(filteredData);
+        });
+        setCountryData(filteredData);
+    }
+
+    function changeSearch(event) {
+        const { value } = event.target;
+        setCountrySearch(value);
+
+        setRegions('all');
+
+        const searchedData = data.filter(country => {
+            return country.name.toLowerCase().startsWith(value);
+        })
+
+        setCountryData(searchedData);
     }
 
     const countryElements = countryData.map(country => {
@@ -43,19 +60,19 @@ export default function CountryList() {
         <div>
             <div>
                 <img src={searchIcon} className="search-icon" />
-                <input type="text" placeholder="Search for a country..." name="countrySearch" />
+                <input type="text" placeholder="Search for a country..." name="countrySearch" value={countrySearch} onChange={changeSearch} />
             </div>
             <div>
                 <select name="regions" id="regions" value={regions} onChange={changeRegion}>
                     <option value="all">Filter by region - All</option>
                     <option value="Africa">Africa</option>
-                    <option value="America">America</option>
+                    <option value="Americas">America</option>
                     <option value="Asia">Asia</option>
                     <option value="Europe">Europe</option>
                     <option value="Oceania">Oceania</option>
                 </select>
             </div>
-            {countryElements}
+            {countryElements.length > 0 ? countryElements : <h2>No countries found</h2>}
         </div>
     )
 }
