@@ -11,7 +11,6 @@ export default function CountryInfoShort(props) {
                     <li>Population: {props.population}</li>
                     <li>Region: {props.region}</li>
                     <li>Capital: {props.capital}</li>
-                    <li>temp item country code: {props.code}</li>
                 </ul>
             </Link>
         </div>

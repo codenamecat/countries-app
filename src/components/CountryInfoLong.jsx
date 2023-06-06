@@ -8,7 +8,7 @@ export default function CountryInfoLong() {
     const countryCode = location.state.countryCode;
 
     const country = countryData.find(item => item.alpha3Code === countryCode)
-    console.log(country)
+    // console.log(country)
     const topLevelDomains = country.topLevelDomain.map(domain => {
         return <span key={domain}>{domain}</span>
     })
@@ -33,7 +33,7 @@ export default function CountryInfoLong() {
                     Back
                 </button>
             </Link>
-            {/* img goes here */}
+            <img src={country.flags.svg} className="flag-img" />
             <h2>{country.name}</h2>
             <ul>
                 <li>Native name: {country.nativeName || "n/a"}</li>
