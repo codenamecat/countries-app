@@ -6,7 +6,6 @@ import {
   Route
 } from 'react-router-dom'
 
-import './App.css'
 import Layout from './components/Layout'
 import CountryInfoLong from './components/CountryInfoLong'
 import CountryList from './components/CountryList'
