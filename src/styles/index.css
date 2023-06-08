@@ -1,3 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  box-shadow: 0 1px 5px #dfdfdf;
+  position: relative;
+}
+
+h1 {
+  font-size: 16px;
+  margin-left: 12px;
+}
+
+.mode-toggler {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  margin-right: 12px;
+}
+
+.mode-icon {
+  width: 16px;
+  margin-right: 8px;
+}
+
+.country-list {
+  background-color: #fafafa;
+}
+
 .search-icon {
   max-width: 20px;
 }

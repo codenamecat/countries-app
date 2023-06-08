@@ -57,7 +57,7 @@ export default function CountryList() {
     })
 
     return (
-        <div>
+        <div className="country-list">
             <div>
                 <img src={searchIcon} className="search-icon" />
                 <input type="text" placeholder="Search for a country..." name="countrySearch" value={countrySearch} onChange={changeSearch} />
