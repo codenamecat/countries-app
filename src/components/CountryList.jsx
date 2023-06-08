@@ -58,19 +58,21 @@ export default function CountryList() {
 
     return (
         <div className="country-list">
-            <div>
-                <img src={searchIcon} className="search-icon" />
-                <input type="text" placeholder="Search for a country..." name="countrySearch" value={countrySearch} onChange={changeSearch} />
-            </div>
-            <div>
-                <select name="regions" id="regions" value={regions} onChange={changeRegion}>
-                    <option value="all">Filter by region - All</option>
-                    <option value="Africa">Africa</option>
-                    <option value="Americas">America</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Europe">Europe</option>
-                    <option value="Oceania">Oceania</option>
-                </select>
+            <div className="search-filter">
+                <div className="search-bar">
+                    <img src={searchIcon} className="search-icon" />
+                    <input type="text" placeholder="Search for a country..." name="countrySearch" value={countrySearch} onChange={changeSearch} />
+                </div>
+                <div className="filter-bar">
+                    <select name="regions" id="regions" value={regions} onChange={changeRegion}>
+                        <option value="all">Filter by region - All</option>
+                        <option value="Africa">Africa</option>
+                        <option value="Americas">America</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+                </div>
             </div>
             {countryElements.length > 0 ? countryElements : <h2>No countries found</h2>}
         </div>
