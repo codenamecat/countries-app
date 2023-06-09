@@ -62,7 +62,7 @@ h1 {
 }
 
 .search-filter {
-  padding: 20px 0;
+  padding-top: 20px;
 
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ h1 {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     font-size: 14px;
-    line-height: 40px;
+    line-height: 50px;
     border: none;
     box-shadow: $boxShadow;
     border-radius: 5px;
@@ -102,19 +102,63 @@ h1 {
 
   select {
     font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    height: 50px;
+    border: none;
+    box-shadow: $boxShadow;
+    min-width: 160px;
+    border-radius: 5px;
+    margin-top: 30px;
+
+    option {
+      font-weight: 600;
+    }
   }
 }
 
 .country-list {
   background-color: color(light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.country-card {
+  background-color: color(plain-white);
+  box-shadow: $boxShadow;
+  border-radius: 5px;
+  margin: 20px auto;
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
+  ul {
+    list-style: none;
+  }
+}
 
+.country-info {
+  padding: 24px 24px 40px 24px;
+  font-size: 16px;
+  width: 280px;
+}
 
+.country-name {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.data-title {
+  font-weight: 600;
+}
 
 .flag-img {
-  max-width: 280px;
+  width: 280px;
+  border-radius: 5px 5px 0 0;
 }
 
 .back-arrow {
