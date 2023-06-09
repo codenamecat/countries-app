@@ -9,7 +9,7 @@ export default function CountryInfoShort(props) {
         <div className="country-card">
             <Link to={props.name} state={{ countryCode: props.code }}>
                 <img src={props.flagImg} alt={`The flag of ${props.name}`} className="flag-img" />
-                <div className="country-info">
+                <div className="country-info-short">
                     <h2 className="country-name">{props.name}</h2>
                     <ul>
                         <li><span className="data-title">Population:</span> {formatPopulation || "n/a"}</li>

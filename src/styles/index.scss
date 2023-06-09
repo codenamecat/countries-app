@@ -140,7 +140,7 @@ h1 {
   }
 }
 
-.country-info {
+.country-info-short {
   padding: 24px 24px 40px 24px;
   font-size: 16px;
   width: 280px;
@@ -157,10 +157,44 @@ h1 {
 }
 
 .flag-img {
+  display: block;
   width: 280px;
   border-radius: 5px 5px 0 0;
 }
 
-.back-arrow {
-  width: 24px;
+.country-page {
+  background-color: color(light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.link-back {
+  align-self: flex-start;
+  margin-left: 40px;
+}
+
+.back-btn {
+  background-color: color(plain-white);
+  border: none;
+  box-shadow: $boxShadow;
+  font-family: inherit;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+
+  // span {
+  //   text-decoration: none;
+  // }
+  
+}
+
+.back-arrow {
+  width: 20px;
+  margin-right: 10px;
+}
+
+// .country-info-long {
+
+// }
