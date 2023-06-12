@@ -31,6 +31,7 @@ h1 {
   background-color: transparent;
   border: none;
   margin-right: 12px;
+  cursor: pointer;
 }
 
 .mode-icon {
@@ -83,6 +84,7 @@ h1 {
   border: none;
   box-shadow: 0 1px 5px #dfdfdf;
   min-width: 160px;
+  padding: 0 20px;
   border-radius: 5px;
   margin-top: 30px;
 }
@@ -102,6 +104,7 @@ h1 {
   box-shadow: 0 1px 5px #dfdfdf;
   border-radius: 5px;
   margin: 20px auto;
+  cursor: pointer;
 }
 .country-card a {
   text-decoration: none;
@@ -131,18 +134,20 @@ h1 {
   display: block;
   width: 280px;
   border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid #dfdfdf;
 }
 
 .country-page {
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding: 0 40px;
 }
 
 .link-back {
-  align-self: flex-start;
-  margin-left: 40px;
+  margin: 40px 0;
+  text-decoration: none;
 }
 
 .back-btn {
@@ -153,10 +158,52 @@ h1 {
   font-weight: 600;
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 20px;
+  cursor: pointer;
 }
 
 .back-arrow {
   width: 20px;
   margin-right: 10px;
+}
+
+.country-info-long {
+  font-size: 14px;
+}
+.country-info-long ul {
+  list-style: none;
+}
+.country-info-long li {
+  margin: 10px 0;
+}
+
+.flag-img-long {
+  display: block;
+  align-self: center;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 1px 5px #dfdfdf;
+}
+
+.country-name-long {
+  margin: 30px 0 20px 0;
+  font-size: 20px;
+}
+
+.border-heading {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.border-countries-container {
+  margin: 12px 0 40px 0;
+}
+.border-countries-container button {
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0 1px 5px #dfdfdf;
+  font-family: inherit;
+  margin: 5px;
+  padding: 5px 20px;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

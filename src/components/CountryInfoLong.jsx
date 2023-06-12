@@ -53,25 +53,29 @@ export default function CountryInfoLong() {
                     <span>Back</span>
                 </button>
             </Link>
-            <img src={country.flags.svg} className='flag-img' />
+            <img src={country.flags.svg} className='flag-img-long' />
             <div className='country-info-long'>
-                <h2>{country.name}</h2>
+                <h2 class="country-name-long">{country.name}</h2>
                 <ul>
-                    <li>Native name: {country.nativeName || 'n/a'}</li>
-                    <li>Population: {formatPopulation || 'n/a'}</li>
-                    <li>Region: {country.region || 'n/a'}</li>
-                    <li>Sub Region: {country.subregion || 'n/a'}</li>
-                    <li>Capital: {country.capital || 'n/a'}</li>
-                    <li>Top Level Domain: {topLevelDomains || 'n/a'}</li>
-                    <li>Currencies: {currencies || 'n/a'}</li>
-                    <li>Languages: {languages || 'n/a'}</li>
+                    <li><span className="data-title">Native name:</span> {country.nativeName || 'n/a'}</li>
+                    <li><span className="data-title">Population:</span> {formatPopulation || 'n/a'}</li>
+                    <li><span className="data-title">Region:</span> {country.region || 'n/a'}</li>
+                    <li><span className="data-title">Sub Region:</span> {country.subregion || 'n/a'}</li>
+                    <li><span className="data-title">Capital:</span> {country.capital || 'n/a'}</li>
+                    <br />
+                    <li><span className="data-title">Top Level Domain:</span> {topLevelDomains || 'n/a'}</li>
+                    <li><span className="data-title">Currencies:</span> {currencies || 'n/a'}</li>
+                    <li><span className="data-title">Languages:</span> {languages || 'n/a'}</li>
                 </ul>
-                <h3>Border Countries: </h3>
-                {borderCountries ? (
+                <br />
+                <h3 class="border-heading">Border Countries: </h3>
+                <div className='border-countries-container'>
+                    {borderCountries ? (
                     <div>{borderCountries}</div>
-                ) : (
-                    <p>No border countries!</p>
-                )}
+                    ) : (
+                    <p>No border countries</p>
+                    )}
+                </div>
             </div>
         </div>
     );
