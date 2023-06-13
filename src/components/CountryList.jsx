@@ -4,7 +4,7 @@ import CountryInfoShort from './CountryInfoShort'
 import data from '../data.json'
 import searchIcon from '../images/search-outline.svg'
 
-export default function CountryList() {
+export default function CountryList(props) {
 
     const [countryData, setCountryData] = React.useState(data);
 
@@ -52,19 +52,20 @@ export default function CountryList() {
                 region={country.region}
                 capital={country.capital}
                 code={country.alpha3Code}
+                darkMode={props.darkMode}
             />
         )
     })
 
     return (
-        <div className="country-list">
+        <div className={`country-list ${props.darkMode ? 'dark' : ''}`}>
             <div className="search-filter">
                 <div className="search-bar">
                     <img src={searchIcon} className="search-icon" />
-                    <input type="text" placeholder="Search for a country..." name="countrySearch" value={countrySearch} onChange={changeSearch} />
+                    <input className={props.darkMode ? 'dark' : ''} type="text" placeholder="Search for a country..." name="countrySearch" value={countrySearch} onChange={changeSearch} />
                 </div>
                 <div className="filter-bar">
-                    <select name="regions" id="regions" value={regions} onChange={changeRegion}>
+                    <select className={props.darkMode ? 'dark' : ''} name="regions" id="regions" value={regions} onChange={changeRegion}>
                         <option value="all">Filter by region - All</option>
                         <option value="Africa">Africa</option>
                         <option value="Americas">America</option>

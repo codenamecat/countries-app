@@ -6,8 +6,8 @@ export default function CountryInfoShort(props) {
     const formatPopulation = new Intl.NumberFormat().format(props.population);
 
     return (
-        <div className="country-card">
-            <Link to={props.name} state={{ countryCode: props.code }}>
+        <div className={`country-card ${props.darkMode ? 'dark' : ''}`}>
+            <Link to={props.name} state={{ countryCode: props.code }} className={props.darkMode ? 'dark' : ''}>
                 <img src={props.flagImg} alt={`The flag of ${props.name}`} className="flag-img" />
                 <div className="country-info-short">
                     <h2 className="country-name">{props.name}</h2>

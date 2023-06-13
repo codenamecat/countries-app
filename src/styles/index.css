@@ -13,8 +13,14 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 70px;
+  background-color: #ffffff;
   box-shadow: 0 1px 5px #dfdfdf;
   position: relative;
+}
+header.dark {
+  background-color: #2b3945;
+  color: #ffffff;
+  box-shadow: 0 1px 5px #1d2427;
 }
 
 h1 {
@@ -32,6 +38,9 @@ h1 {
   border: none;
   margin-right: 12px;
   cursor: pointer;
+}
+.mode-toggler.dark {
+  color: #ffffff;
 }
 
 .mode-icon {
@@ -62,6 +71,16 @@ h1 {
   min-width: 320px;
   padding-left: 50px;
 }
+.search-bar input.dark {
+  background-color: #2b3945;
+  box-shadow: 0 1px 5px #1d2427;
+}
+.search-bar input.dark::-moz-placeholder {
+  color: #fafafa;
+}
+.search-bar input.dark::placeholder {
+  color: #fafafa;
+}
 .search-bar::-moz-placeholder {
   color: #858585;
   font-size: 14px;
@@ -71,7 +90,7 @@ h1 {
   font-size: 14px;
 }
 .search-bar .search-icon {
-  max-width: 16px;
+  width: 16px;
   position: absolute;
   margin-left: 20px;
 }
@@ -88,6 +107,9 @@ h1 {
   border-radius: 5px;
   margin-top: 30px;
 }
+.filter-bar select.dark {
+  background-color: #2b3945;
+}
 .filter-bar select option {
   font-weight: 600;
 }
@@ -98,6 +120,9 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
+.country-list.dark {
+  background-color: #202c37;
+}
 
 .country-card {
   background-color: #ffffff;
@@ -106,9 +131,15 @@ h1 {
   margin: 20px auto;
   cursor: pointer;
 }
+.country-card.dark {
+  background-color: #2b3945;
+}
 .country-card a {
   text-decoration: none;
-  color: black;
+  color: #111517;
+}
+.country-card a.dark {
+  color: #ffffff;
 }
 .country-card ul {
   list-style: none;
@@ -143,6 +174,9 @@ h1 {
   flex-direction: column;
   align-items: flex-start;
   padding: 0 40px;
+}
+.country-page.dark {
+  background-color: #202c37;
 }
 
 .link-back {

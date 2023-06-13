@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import countryData from '../data.json';
 import backArrow from '../images/arrow-back-outline.svg';
 
-export default function CountryInfoLong() {
+export default function CountryInfoLong(props) {
     const location = useLocation();
     const countryCode = location.state.countryCode;
 
@@ -46,7 +46,7 @@ export default function CountryInfoLong() {
     const formatPopulation = new Intl.NumberFormat().format(country.population);
 
     return (
-        <div className='country-page'>
+        <div className={`country-page ${props.darkMode ? 'dark' : ''}`}>
             <Link to='/' className='link-back'>
                 <button className='back-btn'>
                     <img src={backArrow} className='back-arrow' />
@@ -55,7 +55,7 @@ export default function CountryInfoLong() {
             </Link>
             <img src={country.flags.svg} className='flag-img-long' />
             <div className='country-info-long'>
-                <h2 class="country-name-long">{country.name}</h2>
+                <h2 className="country-name-long">{country.name}</h2>
                 <ul>
                     <li><span className="data-title">Native name:</span> {country.nativeName || 'n/a'}</li>
                     <li><span className="data-title">Population:</span> {formatPopulation || 'n/a'}</li>
@@ -68,7 +68,7 @@ export default function CountryInfoLong() {
                     <li><span className="data-title">Languages:</span> {languages || 'n/a'}</li>
                 </ul>
                 <br />
-                <h3 class="border-heading">Border Countries: </h3>
+                <h3 className="border-heading">Border Countries: </h3>
                 <div className='border-countries-container'>
                     {borderCountries ? (
                     <div>{borderCountries}</div>
