@@ -36,7 +36,7 @@ export default function CountryList(props) {
         setRegions('all');
 
         const searchedData = data.filter(country => {
-            return country.name.toLowerCase().startsWith(value);
+            return country.name.toLowerCase().startsWith(value.toLowerCase());
         })
 
         setCountryData(searchedData);
