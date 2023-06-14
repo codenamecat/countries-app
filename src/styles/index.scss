@@ -100,6 +100,7 @@ h1 {
     
     &.dark {
       background-color: color(dark-blue);
+      color: color(plain-white);
       box-shadow: $boxShadowDark;
 
       &::placeholder {
@@ -117,9 +118,10 @@ h1 {
     width: 16px;
     position: absolute;
     margin-left: 20px;
-    
-    // background-color: color(plain-white);
-    // mask-image: url("../images/search-outline.svg"); only half works, rethink
+
+    &.dark {
+      filter: invert(99%) sepia(6%) saturate(3%) hue-rotate(24deg) brightness(106%) contrast(100%);
+    }
   }
 }
 
@@ -139,6 +141,12 @@ h1 {
 
     &.dark {
       background-color: color(dark-blue);
+      box-shadow: $boxShadowDark;
+      color: color(light-gray);
+
+      &:active {
+        background-color: color(dark-blue);
+      }
     }
 
     option {
@@ -147,14 +155,20 @@ h1 {
   }
 }
 
+.no-search-results {
+  margin: 20px 0;
+}
+
 .country-list {
   background-color: color(light-gray);
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: calc(100vh - 70px);
 
   &.dark {
     background-color: color(darker-blue);
+    color: color(plain-white);
   }
 }
 
@@ -167,6 +181,7 @@ h1 {
 
   &.dark {
     background-color: color(dark-blue);
+    box-shadow: $boxShadowDark;
   }
   
   a {
@@ -204,6 +219,10 @@ h1 {
   width: 280px;
   border-radius: 5px 5px 0 0;
   border-bottom: 1px solid color(medium-gray);
+
+  &.dark {
+    border-bottom: none;
+  }
 }
 
 .country-page {
@@ -212,9 +231,11 @@ h1 {
   flex-direction: column;
   align-items: flex-start;
   padding: 0 40px;
+  min-height: calc(100vh - 70px);
 
   &.dark {
     background-color: color(darker-blue);
+    color: color(plain-white);
   }
 }
 
@@ -233,11 +254,21 @@ h1 {
   align-items: center;
   padding: 5px 20px;
   cursor: pointer;
+
+  &.dark {
+    background-color: color(dark-blue);
+    box-shadow: $boxShadowDark;
+    color: color(light-gray);
+  }
 }
 
 .back-arrow {
   width: 20px;
   margin-right: 10px;
+
+  &.dark {
+    filter: invert(99%) sepia(6%) saturate(3%) hue-rotate(24deg) brightness(106%) contrast(100%);
+  }
 }
 
 .country-info-long {
@@ -258,6 +289,10 @@ h1 {
   width: 100%;
   max-width: 350px;
   box-shadow: $boxShadow;
+
+  &.dark {
+    box-shadow: $boxShadowDark;
+  }
 }
 
 .country-name-long {
@@ -269,6 +304,7 @@ h1 {
   font-size: 16px;
   font-weight: 600;
 }
+
 .border-countries-container {
   margin: 12px 0 40px 0;
 
@@ -280,5 +316,16 @@ h1 {
     margin: 5px;
     padding: 5px 20px;
     cursor: pointer;
+
+    &.dark {
+      background-color: color(dark-blue);
+      box-shadow: $boxShadowDark;
+      color: color(plain-white);
+    }
   }
+}
+
+.no-border-countries {
+  margin-top: 10px;
+  font-size: 14px;
 }

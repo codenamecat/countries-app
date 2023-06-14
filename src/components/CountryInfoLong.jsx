@@ -38,7 +38,7 @@ export default function CountryInfoLong(props) {
 
         return (
             <Link to={`/${borderCountry.name}`} state={{ countryCode: borderCountryCode }} key={borderCountryCode}>
-                <button>{borderCountry.name}</button>
+                <button className={props.darkMode ? 'dark' : ''}>{borderCountry.name}</button>
             </Link>
         );
     });
@@ -48,12 +48,12 @@ export default function CountryInfoLong(props) {
     return (
         <div className={`country-page ${props.darkMode ? 'dark' : ''}`}>
             <Link to='/' className='link-back'>
-                <button className='back-btn'>
-                    <img src={backArrow} className='back-arrow' />
+                <button className={`back-btn ${props.darkMode ? 'dark' : ''}`}>
+                    <img src={backArrow} className={`back-arrow ${props.darkMode ? 'dark' : ''}`} />
                     <span>Back</span>
                 </button>
             </Link>
-            <img src={country.flags.svg} className='flag-img-long' />
+            <img src={country.flags.svg} className={`flag-img-long ${props.darkMode ? 'dark' : ''}`} />
             <div className='country-info-long'>
                 <h2 className="country-name-long">{country.name}</h2>
                 <ul>
@@ -69,13 +69,11 @@ export default function CountryInfoLong(props) {
                 </ul>
                 <br />
                 <h3 className="border-heading">Border Countries: </h3>
-                <div className='border-countries-container'>
-                    {borderCountries ? (
-                    <div>{borderCountries}</div>
-                    ) : (
-                    <p>No border countries</p>
-                    )}
-                </div>
+                {borderCountries ? (
+                    <div className='border-countries-container'>{borderCountries}</div>
+                ) : (
+                    <p className='no-border-countries'>No border countries</p>
+                )}
             </div>
         </div>
     );

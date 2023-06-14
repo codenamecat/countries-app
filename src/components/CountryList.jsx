@@ -61,7 +61,7 @@ export default function CountryList(props) {
         <div className={`country-list ${props.darkMode ? 'dark' : ''}`}>
             <div className="search-filter">
                 <div className="search-bar">
-                    <img src={searchIcon} className="search-icon" />
+                    <img src={searchIcon} className={`search-icon ${props.darkMode ? 'dark' : ''}`} />
                     <input className={props.darkMode ? 'dark' : ''} type="text" placeholder="Search for a country..." name="countrySearch" value={countrySearch} onChange={changeSearch} />
                 </div>
                 <div className="filter-bar">
@@ -75,7 +75,7 @@ export default function CountryList(props) {
                     </select>
                 </div>
             </div>
-            {countryElements.length > 0 ? countryElements : <h2>No countries found</h2>}
+            {countryElements.length > 0 ? countryElements : <h2 className='no-search-results'>No countries found</h2>}
         </div>
     )
 }
