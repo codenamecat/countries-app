@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import countryData from '../data.json';
 import backArrow from '../images/arrow-back-outline.svg';
 
 export default function CountryInfoLong(props) {
-    const location = useLocation();
-    const countryCode = location.state.countryCode;
+    const params = useParams();
 
-    const country = countryData.find((item) => item.alpha3Code === countryCode);
+    const country = countryData.find((item) => item.name.toLowerCase() === params.country.toLowerCase()); //url works even when user manually types the name in lowercase
 
     const topLevelDomains = country.topLevelDomain.map((domain) => {
         return <span key={domain}>{domain}</span>;
