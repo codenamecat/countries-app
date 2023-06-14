@@ -13,12 +13,35 @@ $colors: (
   @return map-get($colors, $color-name)
 };
 
-$desktop: 1000px; //for now
+$desktop: 800px; //for now
+
+$grid3: 1050px;
+$grid4: 1400px;
+$grid5: 1700px;
+
 $boxShadow: 0 1px 5px color(medium-gray);
 $boxShadowDark: 0 1px 5px color(dark-shadow);
 
 @mixin desktop {
   @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin grid3 {
+  @media (min-width: #{$grid3}) {
+    @content;
+  }
+}
+
+@mixin grid4 {
+  @media (min-width: #{$grid4}) {
+    @content;
+  }
+}
+
+@mixin grid5 {
+  @media (min-width: #{$grid5}) {
     @content;
   }
 }
@@ -31,6 +54,7 @@ $boxShadowDark: 0 1px 5px color(dark-shadow);
 
 body {
   font-family: 'Nunito Sans', sans-serif;
+  max-width: 2000px;
 }
 
 header {
@@ -42,6 +66,10 @@ header {
   box-shadow: $boxShadow;
   position: relative;
 
+  @include desktop {
+    padding: 0 20px;
+  }
+
   &.dark {
     background-color: color(dark-blue);
     color: color(plain-white);
@@ -52,6 +80,10 @@ header {
 h1 {
   font-size: 16px;
   margin-left: 12px;
+
+  @include desktop {
+    font-size: 20px;
+  }
 }
 
 .mode-toggler {
@@ -76,16 +108,25 @@ h1 {
 }
 
 .search-filter {
-  padding-top: 20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 .search-bar {
-  position: relative;
   display: flex;
   align-items: center;
   margin: 0 auto;
+
+  @include desktop {
+    margin: 0 50px;
+  }
 
   input {
     font-family: 'Nunito Sans', sans-serif;
@@ -139,6 +180,10 @@ h1 {
     border-radius: 5px;
     margin-top: 30px;
 
+    @include desktop {
+      margin: 0 50px;
+    }
+
     &.dark {
       background-color: color(dark-blue);
       box-shadow: $boxShadowDark;
@@ -165,6 +210,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   min-height: calc(100vh - 70px);
+  
 
   &.dark {
     background-color: color(darker-blue);
@@ -172,12 +218,36 @@ h1 {
   }
 }
 
+.countries-container {
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include grid3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include grid4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @include grid5 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
 .country-card {
   background-color: color(plain-white);
   box-shadow: $boxShadow;
   border-radius: 5px;
-  margin: 20px auto;
+  margin: 30px auto;
   cursor: pointer;
+
+  @include desktop {
+    display: inline-block;
+    margin: 30px;
+  }
 
   &.dark {
     background-color: color(dark-blue);
@@ -217,6 +287,7 @@ h1 {
 .flag-img {
   display: block;
   width: 280px;
+  height: 180px;
   border-radius: 5px 5px 0 0;
   border-bottom: 1px solid color(medium-gray);
 
@@ -229,9 +300,13 @@ h1 {
   background-color: color(light-gray);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 0 40px;
   min-height: calc(100vh - 70px);
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
   &.dark {
     background-color: color(darker-blue);
@@ -239,8 +314,15 @@ h1 {
   }
 }
 
-.link-back {
+.back-btn-and-image {
   margin: 40px 0;
+
+  @include desktop {
+    margin-right: 20px;
+  }
+}
+
+.link-back {
   text-decoration: none;
 }
 
@@ -274,12 +356,25 @@ h1 {
 .country-info-long {
   font-size: 14px;
 
+  @include desktop {
+    padding-top: 120px;
+    min-width: 40vw;
+  }
+
   ul {
     list-style: none;
+
+    @include desktop {
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
   }
 
   li {
     margin: 10px 0;
+    
   }
 }
 
@@ -289,6 +384,11 @@ h1 {
   width: 100%;
   max-width: 350px;
   box-shadow: $boxShadow;
+  margin-top: 50px;
+
+  @include desktop {
+    max-width: 400px;
+  }
 
   &.dark {
     box-shadow: $boxShadowDark;
@@ -296,7 +396,7 @@ h1 {
 }
 
 .country-name-long {
-  margin: 30px 0 20px 0;
+  margin-bottom: 20px;
   font-size: 20px;
 }
 

@@ -47,13 +47,15 @@ export default function CountryInfoLong(props) {
 
     return (
         <div className={`country-page ${props.darkMode ? 'dark' : ''}`}>
-            <Link to='/' className='link-back'>
-                <button className={`back-btn ${props.darkMode ? 'dark' : ''}`}>
-                    <img src={backArrow} className={`back-arrow ${props.darkMode ? 'dark' : ''}`} />
-                    <span>Back</span>
-                </button>
-            </Link>
-            <img src={country.flags.svg} className={`flag-img-long ${props.darkMode ? 'dark' : ''}`} />
+            <div className='back-btn-and-image'>
+                <Link to='/' className='link-back'>
+                    <button className={`back-btn ${props.darkMode ? 'dark' : ''}`}>
+                        <img src={backArrow} className={`back-arrow ${props.darkMode ? 'dark' : ''}`} />
+                        <span>Back</span>
+                    </button>
+                </Link>
+                <img src={country.flags.svg} className={`flag-img-long ${props.darkMode ? 'dark' : ''}`} />
+            </div>
             <div className='country-info-long'>
                 <h2 className="country-name-long">{country.name}</h2>
                 <ul>

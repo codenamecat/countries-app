@@ -47,7 +47,7 @@ export default function CountryList(props) {
             <CountryInfoShort
                 key={country.name}
                 name={country.name}
-                flagImg={country.flags.svg}
+                flagImg={country.flags.png}
                 population={country.population}
                 region={country.region}
                 capital={country.capital}
@@ -75,7 +75,9 @@ export default function CountryList(props) {
                     </select>
                 </div>
             </div>
-            {countryElements.length > 0 ? countryElements : <h2 className='no-search-results'>No countries found</h2>}
+            <div className='countries-container'>
+                {countryElements.length > 0 ? countryElements : <h2 className='no-search-results'>No countries found</h2>}
+            </div>
         </div>
     )
 }
