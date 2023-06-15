@@ -6,7 +6,7 @@ import backArrow from '../images/arrow-back-outline.svg';
 export default function CountryInfoLong(props) {
     const params = useParams();
 
-    const country = countryData.find((item) => item.name.toLowerCase() === params.country.toLowerCase()); //url works even when user manually types the name in lowercase
+    const country = countryData.find((item) => item.name.toLowerCase() === params.country.toLowerCase()); //url works even if the user manually types the pathname in lowercase, e.g. /finland
 
     const topLevelDomains = country.topLevelDomain.map((domain) => {
         return <span key={domain}>{domain}</span>;

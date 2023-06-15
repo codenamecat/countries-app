@@ -28,15 +28,22 @@ header.dark {
   color: #ffffff;
   box-shadow: 0 1px 5px #1d2427;
 }
+header a {
+  text-decoration: none;
+}
 
 h1 {
   font-size: 16px;
   margin-left: 12px;
+  color: black;
 }
 @media (min-width: 800px) {
   h1 {
     font-size: 20px;
   }
+}
+h1.dark {
+  color: #ffffff;
 }
 
 .mode-toggler {
@@ -152,6 +159,12 @@ h1 {
 
 .no-search-results {
   margin: 20px 0;
+}
+@media (min-width: 800px) {
+  .no-search-results {
+    position: absolute;
+    left: 50px;
+  }
 }
 
 .country-list {
@@ -371,4 +384,25 @@ h1 {
 .no-border-countries {
   margin-top: 10px;
   font-size: 14px;
+}
+
+.error-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 70px);
+  background-color: #fafafa;
+}
+.error-element.dark {
+  background-color: #202c37;
+  color: #ffffff;
+}
+.error-element h2 {
+  margin: 20px 0;
+}
+.error-element a {
+  font-size: 20px;
+}
+.error-element a.dark {
+  color: #ffffff;
 }/*# sourceMappingURL=index.css.map */
