@@ -6,7 +6,7 @@
 
 body {
   font-family: "Nunito Sans", sans-serif;
-  max-width: 2000px;
+  max-width: 2600px;
 }
 
 header {
@@ -198,6 +198,11 @@ h1.dark {
 @media (min-width: 1700px) {
   .countries-container {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 2050px) {
+  .countries-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
 

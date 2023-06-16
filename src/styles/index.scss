@@ -18,6 +18,7 @@ $desktop: 800px;
 $grid3: 1050px;
 $grid4: 1400px;
 $grid5: 1700px;
+$grid6: 2050px;
 
 $boxShadow: 0 1px 5px color(medium-gray);
 $boxShadowDark: 0 1px 5px color(dark-shadow);
@@ -46,6 +47,12 @@ $boxShadowDark: 0 1px 5px color(dark-shadow);
   }
 }
 
+@mixin grid6 {
+  @media (min-width: #{$grid6}) {
+    @content;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -54,7 +61,7 @@ $boxShadowDark: 0 1px 5px color(dark-shadow);
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  max-width: 2000px;
+  max-width: 2600px;
 }
 
 header {
@@ -248,6 +255,10 @@ h1 {
 
   @include grid5 {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  @include grid6 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
