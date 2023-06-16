@@ -313,7 +313,7 @@ h1.dark {
 }
 
 .country-info-long {
-  font-size: 14px;
+  font-size: 16px;
 }
 @media (min-width: 800px) {
   .country-info-long {
@@ -326,7 +326,7 @@ h1.dark {
 }
 @media (min-width: 800px) {
   .country-info-long ul {
-    height: 220px;
+    height: 230px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -383,7 +383,7 @@ h1.dark {
 
 .no-border-countries {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .error-element {
