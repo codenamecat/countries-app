@@ -16,7 +16,7 @@ I started the project using the recommended API but soon opted for using the loc
 
 For a while I was stuck on how to implement dark/light mode in a way that maintains the user's preference as they navigate to different routes. In the end I used local storage so that the mode stays the same even between refreshes.
 
-Input field filters countries correctly regardless of upper/lowercase. By default the pathname starts with a capital letter, but it works even if the user types the country name in all lowercase or uppercase.
+Input field finds search results regardless of upper/lowercase. By default the pathname starts with a capital letter, but it works even if the user types the country name in all lowercase or uppercase.
 
 My main addition to the original challenge was adding an error element so that navigating to a route that doesn't exist leads the user neatly back to the home page. I also modified the styling a little bit: the mode toggler changes depending on the currently chosen mode, I added faint borders to make white flags distinguishable from the background, and the design is more responsive to different screen sizes. Unfortunately the original data provided flag images that were not at all uniform in size. In order to follow the model design I styled them all to the same height and width on the home page, which means some of them look stretched. In the individual info view the flags have their original dimensions.
 
