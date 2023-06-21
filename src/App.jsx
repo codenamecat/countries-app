@@ -37,8 +37,6 @@ function App() {
     return (
         <RouterProvider
             router={router}
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
         />
     );
 }

@@ -6,7 +6,7 @@ import backArrow from '../images/arrow-back-outline.svg';
 export default function CountryInfoLong(props) {
     const params = useParams();
 
-    const country = countryData.find((item) => item.name.toLowerCase() === params.country.toLowerCase()); //url works even if the user manually types the pathname in lowercase, e.g. /finland
+    const country = countryData.find((item) => item.name.toLowerCase() === params.country.toLowerCase()); //url works even if the user manually types the pathname in all lowercase or uppercase, e.g. /finland
 
     const topLevelDomains = country.topLevelDomain.map((domain) => {
         return <span key={domain}>{domain}</span>;
@@ -56,20 +56,20 @@ export default function CountryInfoLong(props) {
                 <img src={country.flags.svg} className={`flag-img-long ${props.darkMode ? 'dark' : ''}`} />
             </div>
             <div className='country-info-long'>
-                <h2 className="country-name-long">{country.name}</h2>
+                <h2 className='country-name-long'>{country.name}</h2>
                 <ul>
-                    <li><span className="data-title">Native name:</span> {country.nativeName || 'n/a'}</li>
-                    <li><span className="data-title">Population:</span> {formatPopulation || 'n/a'}</li>
-                    <li><span className="data-title">Region:</span> {country.region || 'n/a'}</li>
-                    <li><span className="data-title">Sub Region:</span> {country.subregion || 'n/a'}</li>
-                    <li><span className="data-title">Capital:</span> {country.capital || 'n/a'}</li>
+                    <li><span className='data-title'>Native name:</span> {country.nativeName || 'n/a'}</li>
+                    <li><span className='data-title'>Population:</span> {formatPopulation || 'n/a'}</li>
+                    <li><span className='data-title'>Region:</span> {country.region || 'n/a'}</li>
+                    <li><span className='data-title'>Sub Region:</span> {country.subregion || 'n/a'}</li>
+                    <li><span className='data-title'>Capital:</span> {country.capital || 'n/a'}</li>
                     <br />
-                    <li><span className="data-title">Top Level Domain:</span> {topLevelDomains || 'n/a'}</li>
-                    <li><span className="data-title">Currencies:</span> {currencies || 'n/a'}</li>
-                    <li><span className="data-title">Languages:</span> {languages || 'n/a'}</li>
+                    <li><span className='data-title'>Top Level Domain:</span> {topLevelDomains || 'n/a'}</li>
+                    <li><span className='data-title'>Currencies:</span> {currencies || 'n/a'}</li>
+                    <li><span className='data-title'>Languages:</span> {languages || 'n/a'}</li>
                 </ul>
                 <br />
-                <h3 className="border-heading">Border Countries: </h3>
+                <h3 className='border-heading'>Border Countries: </h3>
                 {borderCountries ? (
                     <div className='border-countries-container'>{borderCountries}</div>
                 ) : (

@@ -64,7 +64,7 @@ export default function CountryList(props) {
                     <img src={searchIcon} className={`search-icon ${props.darkMode ? 'dark' : ''}`} />
                     <input className={props.darkMode ? 'dark' : ''} type="text" placeholder="Search for a country..." name="countrySearch" value={countrySearch} onChange={changeSearch} />
                 </div>
-                <div className="filter-bar">
+                <div className='filter-bar'>
                     <select className={props.darkMode ? 'dark' : ''} name="regions" id="regions" value={regions} onChange={changeRegion}>
                         <option value="all">Filter by region - All</option>
                         <option value="Africa">Africa</option>
